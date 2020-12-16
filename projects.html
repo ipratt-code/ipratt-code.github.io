@@ -24,13 +24,12 @@
 		</nav>
     </header>
 	<div class="content">
-	<h1>Welcome!</h1>
-	<img src="{{url_for('static', filename='img/myfaceaa.jpg')}}" id="indexMugShot">
-	<p>This is my website!</p>
-	<p>This website is run on a <a href = "https://palletsprojects.com/p/flask/">Flask app</a> deployed using <a href="https://gunicorn.org/">Gunicorn</a> on a <a href = "https://github.com">Github</a> repository which runs on <a href="https://repl.it">repl.it</a> connected to <a href = "https://freenom.com">Freenom</a> via a CNAME record proxied through <a href="https://cloudflare.com">Cloudflare</a>.</p>
-	<p>I'm 99% sure this is legal.</p>
-	<p>Also, if you are one of my brothers, or my brothers' friends, please leave.</p>
-	<p id="isbday">It's not my birthday yet :(</p>
+	<h1>My Projects</h1>
+        <ul>
+			<li><a href="{{url_for('webdevchallenges')}}">My web development challenges for Lane Tech 2020 Web Dev 1</a></li>
+			<li><a href="{{url_for('ltscifair2020')}}">Lane Tech Science fair 2020 - 2021</a></li>
+			<li><a href="{{url_for('imagefilters')}}">CSS image filters playground</a></li>
+		</ul>
 	</div>
 	<div class="footer">
         <p>This site is hosted by <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Repl.it_logo.svg"> repl.it. They are amazing</p>
@@ -39,12 +38,5 @@
             This site is licensed under the MIT License. Check it out <a href="https://github.com/ipratt-code/my-website">here</a>!
         </p>
 	</div>
-	<script>
-		var d = new Date()
-		var isBday = document.getElementById("isbday");
-		if(d.getMonth() == 11 && d.getDate() == 7){
-			isBday.innerHTML = "🎉 It's my birthday! 🎉"
-		}
-	</script>
     </body>
 </html>
