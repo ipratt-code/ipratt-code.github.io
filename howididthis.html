@@ -12,7 +12,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
 
 	</script>
-	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+	<link rel="stylesheet" href="static/css/style.css" />
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 		<h3>Hello, I am Ian Pratt</h3>
 		<p><i>A simple programmer</i></p>
 		<nav class="navbar navbar-style">
-        	<a href="{{url_for('home')}}">back to home</a>|<a href="{{url_for('aboutme')}}">about me</a>|<a href="{{url_for('otherwebsites')}}">other interesting websites</a>|<a href="{{url_for('github')}}">my Github page</a>|<a href="{{url_for('howididthis')}}">how i did this</a>|<a href="{{url_for('projects')}}">projects</a>|<a href="https://stats.ianpratt.tk/" target="_blank">server statistics</a>
+        	<a href="/">back to home</a>|<a href="aboutme.html">about me</a>|<a href="otherwebsites.html">other interesting websites</a>|<a href="github.html">my Github page</a>|<a href="howididthis.html">how i did this</a>|<a href="projects.html">projects</a>|<a href="https://stats.ianpratt.tk/" target="_blank">server statistics</a>
 		</nav>
     </header>
 		<div class="content">
@@ -65,6 +65,7 @@
 		<div class="content">
         <h1>Part 2</h1>
         <h6>Setting up Repl.it</h6>
+		<h6>NOW THAT THIS WEBSITE IS HOSTED ON GITHUB PAGES, THIS PART IS OBSOLETE</h6>
         <p>
             Log into <a href="https://repl.it">repl.it</a>. Create a new repl titled whatever you want, and make it a
             <b><i>PYTHON</i></b> repl. This is important, we will use python to create a
@@ -105,6 +106,7 @@
 		<div class="content">
         <h1>Part 3</h1>
         <h6>Connecting Repl.it to your domain</h6>
+		<h6>NOW THAT THIS WEBSITE IS HOSTED ON GITHUB PAGES, THE PARTS WORKING WITH REPL.IT ARE OBSOLETE!</h6>
         <p>
             Now, you need to sign up or log into <a href="https://cloudflare.com">Cloudflare</a>.
             Click on the thing that says add site. It should show a window saying
@@ -131,16 +133,13 @@
         </p>
 		</div>
 		<div class="content">
-			<p>This site is hosted by repl.it.</p>
-			<p>This is the code for my website, right here!<p>
-			<iframe height="400px" width="100%" src="https://repl.it/@thingcoder1/my-website?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+			<p>This site is hosted by github pages.</p>
+			<p>And all the code is tested on repl.it before deployment!</p>
+			<p>This is the development code for my website, right here!<p>
+			<iframe height="400px" width="100%" src="https://repl.it/@thingcoder1/ipratt-codegithubio?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>		</div>
 		</div>
 		<div class="footer">
-        <p>This site is hosted by <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Repl.it_logo.svg"> repl.it. They are amazing</p>
-	<p class="credits"><i>This image is from repl.it. All credits go to them</i></p>
-		<p>
-            This site is licensed under the MIT License. Check it out <a href="https://github.com/ipratt-code/my-website">here</a>!
-        </p>
+			<p>This site is licensed under the MIT License. Check it out <a href="https://github.com/ipratt-code/ipratt-code.github.io">here</a>!</p>
 		</div>
     </body>
 </html>

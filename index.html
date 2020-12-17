@@ -12,7 +12,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
 
 	</script>
-	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+	<link rel="stylesheet" href="static/css/style.css" />
 </head>
 
 <body>
@@ -20,12 +20,12 @@
 		<h3>Hello, I am Ian Pratt</h3>
 		<p><i>A simple programmer</i></p>
 		<nav class="navbar navbar-style">
-        	<a href="index.html">back to home</a>|<a href="aboutme.html">about me</a>|<a href="otherwebsites.html">other interesting websites</a>|<a href="github.html">my Github page</a>|<a href="howididthis.html">how i did this</a>|<a href="{{url_for('projects')}}">projects</a>|<a href="https://stats.ianpratt.tk/" target="_blank">server statistics</a>
+        	<a href="/">back to home</a>|<a href="aboutme.html">about me</a>|<a href="otherwebsites.html">other interesting websites</a>|<a href="github.html">my Github page</a>|<a href="howididthis.html">how i did this</a>|<a href="projects.html">projects</a>|<a href="https://stats.ianpratt.tk/" target="_blank">server statistics</a>
 		</nav>
     </header>
 	<div class="content">
 	<h1>Welcome!</h1>
-	<img src="{{url_for('static', filename='img/myfaceaa.jpg')}}" id="indexMugShot">
+	<img src="static/img/mugshot.jpg" id="indexMugShot">
 	<p>This is my website!</p>
 	<p>This website is run on a <a href = "https://palletsprojects.com/p/flask/">Flask app</a> deployed using <a href="https://gunicorn.org/">Gunicorn</a> on a <a href = "https://github.com">Github</a> repository which runs on <a href="https://repl.it">repl.it</a> connected to <a href = "https://freenom.com">Freenom</a> via a CNAME record proxied through <a href="https://cloudflare.com">Cloudflare</a>.</p>
 	<p>I'm 99% sure this is legal.</p>
@@ -33,11 +33,7 @@
 	<p id="isbday">It's not my birthday yet :(</p>
 	</div>
 	<div class="footer">
-        <p>This site is hosted by <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Repl.it_logo.svg"> repl.it. They are amazing</p>
-	<p class="credits"><i>This image is from repl.it. All credits go to them</i></p>
-		<p>
-            This site is licensed under the MIT License. Check it out <a href="https://github.com/ipratt-code/my-website">here</a>!
-        </p>
+        <p>This site is licensed under the MIT License. Check it out <a href="https://github.com/ipratt-code/ipratt-code.github.io">here</a>!</p>
 	</div>
 	<script>
 		var d = new Date()
