@@ -63,3 +63,6 @@ header{
 div>code{
 	text-align:left;
 }
+nav a:hover{
+	background-color:#3366FF;
+}
