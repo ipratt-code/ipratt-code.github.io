@@ -33,55 +33,42 @@
 		</nav>
     </header>
 	<div class="content">
-	<p>These are challenges set by my web dev teachers to help me learn web development.</p>
-		<p>Here they are!</p>
-		<p><i>web dev 1:</i></p>
-	</div>
-	<div class="content">
-		<p>example schedule (working with tables)</p>
-		<table>
-			<tr>
-				<th rowspan="6">Hours</th>
-				<th>Monday</th>
-				<th>Tuesday</th>
-				<th>Wednesday</th>
-				<th>Thursday</th>
-				<th>Friday</th>
-			</tr>
-			<tr>
-				<td>science</th>
-				<td>math</th>
-				<td>science</th>
-				<td>math</th>
-				<td>art</th>
-			</tr>
-			<tr>
-				<td>social</th>
-				<td>history</th>
-				<td>english</th>
-				<td>social</th>
-				<td>art</th>
-			</tr>
-			<tr>
-				<td colspan="5">lunch</td>
-			</tr>
-			<tr>
-				<td>science</th>
-				<td>math</th>
-				<td>science</th>
-				<td>math</th>
-				<td rowspan="2">project</th>
-			</tr>
-			<tr>
-				<td>social</th>
-				<td>history</th>
-				<td>english</th>
-				<td>social</th>
-			</tr>
-		</table>
+		<!--<form action="https://ipratt-codedb.thingcoder1.repl.co/login" method="POST"> commenting this out due to uselessness, maybe usefull in future -->
+		<form id="loginform">	
+			<div>
+				<label for="username">Username:</label>
+				<input name="username" id="username">
+			</div>
+			<div>
+				<label for="to">Password:</label>
+				<input name="password" id="password">
+			</div>
+			<div>
+				<button id="loginbtn">Submit data</button>
+			</div>
+		</form>
+		<p id="usernamereturn">Your username: </p>
+		<p id="passwordreturn">Your password: </p>
 	</div>
 	<div class="footer">
         <p>This site is licensed under the MIT License. Check it out <a href="https://github.com/ipratt-code/ipratt-code.github.io">here</a>!</p>
 	</div>
-    </body>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="../static/js/jquery.serializejson.js"></script>
+	<script src="../static/js/login.js"></script>
+	<!--<script>
+		// stops form from reloading page (thx stackoverflow!!!)
+		var form = document.getElementById("loginform");
+		function handleForm(event) { event.preventDefault(); } 
+
+
+		// applying js func to login button
+		document.getElementById("loginbtn").onclick = login;
+		function login() {
+			console.log($('form').serializeJSON());
+		}
+	</script> 
+	getting rid of this b/c outsorced to ext. file-->
+</body>
+
 </html>
