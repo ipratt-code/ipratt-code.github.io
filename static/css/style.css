@@ -80,10 +80,10 @@ nav a {
 	border-radius: 500px;
 }
 nav a:hover{
-	background-color: #73bcfc;/*rgb(0, 186, 243);*/
+	background-color: #52aeff;/*rgb(0, 186, 243);*/
 	text-decoration: none;
 }
 header {
 	padding-top: 12px;
-	background-color: #52aeff;
+	background-color: #73bcfc;
 }
