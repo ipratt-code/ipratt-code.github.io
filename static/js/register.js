@@ -4,7 +4,7 @@ function handleForm(event) { event.preventDefault(); }
 form.addEventListener('submit', handleForm);
 
 // applying js func to login button
-document.getElementById("registerbtn").onclick = getRegisterResponse;
+// document.getElementById("registerbtn").onclick = getRegisterResponse;
 
 function updatePage(data) {
 	document.getElementById("datareturn").textContent = "Returned data: " + JSON.stringify(data);
@@ -12,6 +12,7 @@ function updatePage(data) {
 
 function getRegisterResponse() {
 	var formJson = $('form').serializeJSON()
+	console.log(formJson);
 	formJson.type = "register"
 	$.post("https://ipratt-codedb.thingcoder1.repl.co/register",
 	formJson,

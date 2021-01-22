@@ -12,6 +12,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
 
 	</script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer>
+	</script>
 	<link rel="stylesheet" href="../static/css/style.css" />
 </head>
 
@@ -43,7 +45,7 @@
 				<input name="password" id="password">
 			</div>
 			<div>
-				<button id="registerbtn">Submit data</button>
+				<button id="registerbtn" class="g-recaptcha" data-sitekey="6LcL7jcaAAAAAH30ohD_FZ1uKQ1GL6fY4QTnVrVZ" data-callback='getRegisterResponse'>Submit data</button>
 			</div>
 		</form>
 		<p id="datareturn">Returned data: </p>

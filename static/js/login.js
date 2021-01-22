@@ -4,7 +4,7 @@ function handleForm(event) { event.preventDefault(); }
 form.addEventListener('submit', handleForm);
 
 // applying js func to login button
-document.getElementById("loginbtn").onclick = getLoginResponse;
+// document.getElementById("loginbtn").onclick = getLoginResponse;
 function updatePage(data) {
 	document.getElementById("datareturn").textContent = "Returned data: " + JSON.stringify(data);
 }
