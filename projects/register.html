@@ -14,6 +14,7 @@
 	</script>
 	<script src="https://www.google.com/recaptcha/api.js" async defer>
 	</script>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LcnITgaAAAAAAZakjtgzr3a3VHN6qI0d0RnB4gg"></script>
 	<link rel="stylesheet" href="../static/css/style.css" />
 </head>
 
@@ -42,13 +43,14 @@
 			</div>
 			<div>
 				<label for="password">Password:</label>
-				<input name="password" id="password">
+				<input type="password" name="password" id="password">
 			</div>
 			<div>
 				<button id="registerbtn" class="g-recaptcha" data-sitekey="6LcL7jcaAAAAAH30ohD_FZ1uKQ1GL6fY4QTnVrVZ" data-callback='getRegisterResponse'>Submit data</button>
 			</div>
 		</form>
 		<p id="datareturn">Returned data: </p>
+		<p>Already have an account? Log in <a href="login">here</a></p>
 	</div>
 	<div class="footer">
         <p>This site is licensed under the MIT License. Check it out <a href="https://github.com/ipratt-code/ipratt-code.github.io">here</a>!</p>

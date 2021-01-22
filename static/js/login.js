@@ -17,14 +17,7 @@ function getLoginResponse() {
 	function(data){
 		data = JSON.parse(data);
 		if(data.error != undefined){
-			if(data.error == "username does not exist"){
-				window.alert("username does not exist");
-				location.href = 'register';
-			} else if(data.error == "incorrect password"){
-				window.alert("incorrect password");
-				location.href = 'login';
-			}
-
+			window.alert(data.error);
 		}
 		updatePage(data);
     });

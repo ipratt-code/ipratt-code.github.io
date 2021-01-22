@@ -19,11 +19,7 @@ function getRegisterResponse() {
 	function(data){
 		data = JSON.parse(data);
 		if(data.error != undefined){
-			if(data.error == "username is already taken"){
-				window.alert("username is already taken");
-				location.href = 'register';
-			}
-
+			window.alert(data.error);
 		}
 		updatePage(data);
     });
