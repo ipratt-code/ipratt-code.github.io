@@ -33,8 +33,7 @@
 		</nav>
     </header>
 	<div class="content">
-		<!--<form action="https://ipratt-codedb.thingcoder1.repl.co/login" method="POST"> commenting this out due to uselessness, maybe usefull in future -->
-		<form id="loginform">	
+		<form id="registerform">	
 			<div>
 				<label for="username">Username:</label>
 				<input name="username" id="username">
@@ -44,7 +43,7 @@
 				<input name="password" id="password">
 			</div>
 			<div>
-				<button id="loginbtn">Submit data</button>
+				<button id="registerbtn">Submit data</button>
 			</div>
 		</form>
 		<p id="datareturn">Returned data: </p>
@@ -54,7 +53,7 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="../static/js/jquery.serializejson.js"></script>
-	<script src="../static/js/login.js"></script>
+	<script src="../static/js/register.js"></script>
 	<!--<script>
 		// stops form from reloading page (thx stackoverflow!!!)
 		var form = document.getElementById("loginform");
