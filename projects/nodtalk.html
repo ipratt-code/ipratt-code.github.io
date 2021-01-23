@@ -38,10 +38,27 @@
 			</table>
 		</nav>
     </header>
-		<div class="content">
-		<input type="text" id="userName" name="userName" placeholder="name">
-		<input type="text" id="message" name="message" onfocus="this.value=''" placeholder="message">
-		<button type="button" onclick="sendMessage();">Send</button><br>
+	<div class="content">
+		<div class="homepage">
+      <h1>NodChat</h1>
+      <div class="center"> 
+         <input type="text" class="channel" id="channel" placeholder="enter a channel" autofocus=""></input>
+      </div>
+      <br>
+      <div class="center">
+         <input type="text" class="name" id="name" placeholder="enter a nickname"></input>
+      </div>
+      <br>
+      <button class="enter-button" onclick="launchApp();">Enter Chatroom</button>
+   </div>
+   <div class="client hidden">
+      <h3 class="channel-indicator">#channel</h3>
+      <h3 class="name-indicator">username</h3>
+      <div class="messages"></div>
+      <div class="center">
+         <input type="text" class="message-box" id="message-box" placeholder="message" autofocus=""></input><button class="enter-button" onclick="sendMessage();">Send</button>
+      </div>
+   </div>
 	</div>
 	<div class="footer">
         <p>This site is licensed under the MIT License. Check it out <a href="https://github.com/ipratt-code/ipratt-code.github.io">here</a>!</p>
