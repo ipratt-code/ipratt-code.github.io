@@ -85,7 +85,9 @@ function connect(name, channel) {
         var user = clean(obj.message.username);
         var msg = clean(crypt.decrypt(obj.message.emoji));
         var color = clean(obj.message.tone);
-        $(".messages").append("<b style='color: " + color + ";'>" + user + ": </b><span>" + msg + "</span><br>");
+	if (msg.length > 0) {
+     	   $(".messages").append("<b style='color: " + color + ";'>" + user + ": </b><span>" + msg + "</span><br>");
+	}
     }
 
     ws.onclose = function(e) {
@@ -102,15 +104,23 @@ function connect(name, channel) {
 }
 
 function sendMessage() {
+	var name = document.getElementById("name").value;
+    if (name == false) {
+        name = "Unnamed User";
+    }
+    var channel = document.getElementById("channel").value;
+    if (channel == false) {
+        channel = "main";
+    }
     if (document.getElementById("message-box").value.length == 0) {
         return false;
-    }
+	}
     sendJson({
         action: "MESSAGE",
         message: {
-            id: document.getElementById("channel").value,
+            id: channel,
             emoji: crypt.encrypt(document.getElementById("message-box").value),
-            username: document.getElementById("name").value,
+            username: crypt.encrypt(name),
             img: "",
             tone: userColor
         }
