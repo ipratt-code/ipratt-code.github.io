@@ -1,1 +1,150 @@
-var sendJson=function(){console.log("not started")},crypt={secret:"admin",encrypt:function(e){var n=CryptoJS.AES.encrypt(e,crypt.secret);return n=n.toString()},decrypt:function(e){var n=CryptoJS.AES.decrypt(e,crypt.secret);return n=n.toString(CryptoJS.enc.Utf8)}};function launchApp(){var e=document.getElementById("name").value;0==e&&(e="Unnamed User");var n=document.getElementById("channel").value;0==n&&(n="main"),$(".channel-indicator").html("#"+n),$(".name-indicator").html(e),connect(e,n),$(".homepage").removeClass("visible"),$(".homepage").addClass("hidden"),$(".client").removeClass("hidden"),$(".client").addClass("visible")}function connect(e,n){var t=new WebSocket("wss://j24amtdvi4.execute-api.us-east-1.amazonaws.com/prod");sendJson=function(e){t.send(JSON.stringify(e))},t.onopen=function(){sendJson({route:"join",data:{id:n,team:"lt"}});setInterval(()=>{console.log("Keeping Nod alive..."),sendJson({route:"ping"})},54e4)},t.onmessage=function(e){console.log(e.data);var n=JSON.parse(e.data),t=clean(n.message.username),s=clean(crypt.decrypt(n.message.emoji));$(".messages").append(t+": "+s+"<br>"),$(".messages").scrollTop($(".messages").scrollHeight)},t.onclose=function(e){console.log("Socket is closed. Reconnect will be attempted in 1 second.",e.reason),setTimeout(function(){connect()},1e3)},t.onerror=function(e){console.error("Socket encountered error: ",e.message,"Closing socket"),t.close()}}function sendMessage(){if(0==document.getElementById("message-box").value.length)return!1;sendJson({action:"MESSAGE",message:{id:document.getElementById("channel").value,emoji:crypt.encrypt(document.getElementById("message-box").value),username:document.getElementById("name").value,img:"",tone:""}}),$(".messages").append("You: "+document.getElementById("message-box").value+"<br>"),$(".messages").scrollTop($(".messages").scrollHeight),document.getElementById("message-box").value=""}function clean(e){return e.replace(/[<>&'"]/g,function(e){switch(e){case"<":return"&lt;";case">":return"&gt;";case"&":return"&amp;";case"'":return"&apos;";case'"':return"&quot;";case":":return"&#58;";case";":return"&#59;";case"{":return"&#123;";case"}":return"&#125;";case",":return"&#44;"}})}$(document).keyup(function(e){$(".name").is(":focus")&&"Enter"==e.key&&launchApp()}),$(document).keyup(function(e){$(".message-box").is(":focus")&&"Enter"==e.key&&sendMessage()});
+var userColor = "#" + (Math.floor(Math.random() * 2 ** 24).toString(16).padStart(6, "0"));
+var sendJson = function() {
+    console.log("not started")
+}
+
+//Before the script tag containing this code, you must include this script tag:
+//<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+//for the encryption logic
+
+var crypt = {
+	secret : "admin",
+	encrypt : function (clear){
+	// encrypt() : encrypt the given clear text
+
+		var cipher = CryptoJS.AES.encrypt(clear, crypt.secret);
+		cipher = cipher.toString();
+		return cipher;
+	},
+
+	decrypt : function (cipher) {
+	// decrypt() : decrypt the given cipher text
+
+		var decipher = CryptoJS.AES.decrypt(cipher, crypt.secret);
+		decipher = decipher.toString(CryptoJS.enc.Utf8);
+		return decipher;
+	}
+};
+
+function launchApp() {
+    var name = document.getElementById("name").value;
+    if (name == false) {
+        name = "Unnamed User";
+    }
+    var channel = document.getElementById("channel").value;
+    if (channel == false) {
+        channel = "main";
+    } else if (channel.charAt(0) == "%") {
+		crypt.secret = window.prompt("Enter encryption key:")
+	}
+    $(".channel-indicator").html("#" + channel);
+    $(".name-indicator").html(name);
+    connect(name, channel);
+    $(".homepage").removeClass('visible');
+    $(".homepage").addClass('hidden');
+    $(".client").removeClass('hidden');
+    $(".client").addClass('visible');
+}
+
+$(document).keyup(function(event) {
+    if ($(".name").is(":focus") && event.key == "Enter") {
+        launchApp();
+    }
+});
+
+function connect(name, channel) {
+    var ws = new WebSocket('wss://j24amtdvi4.execute-api.us-east-1.amazonaws.com/prod');
+    sendJson = function sendJson(msg) {
+        ws.send(JSON.stringify(msg));
+    }
+    ws.onopen = function() {
+        // subscribe to some channels
+        sendJson({
+            route: "join",
+            data: {
+                id: channel,
+                team: "lt"
+            }
+        });
+
+        const tryConnect = () => {
+            console.log("Keeping Nod alive...");
+            sendJson({
+                route: "ping"
+            });
+        };
+        setInterval(tryConnect, 54E4);
+    };
+
+    ws.onmessage = function(event) {
+        console.log(event.data);
+        var obj = JSON.parse(event.data);
+        var user = clean(obj.message.username);
+        var msg = clean(crypt.decrypt(obj.message.emoji));
+        var color = clean(obj.message.tone);
+        $(".messages").append("<b style='color: " + color + ";'>" + user + ": </b><span>" + msg + "</span><br>");
+    }
+
+    ws.onclose = function(e) {
+        console.log('Socket is closed. Reconnect will be attempted in 1 second.', e.reason);
+        setTimeout(function() {
+            connect();
+        }, 1000);
+    };
+
+    ws.onerror = function(err) {
+        console.error('Socket encountered error: ', err.message, 'Closing socket');
+        ws.close();
+    };
+}
+
+function sendMessage() {
+    if (document.getElementById("message-box").value.length == 0) {
+        return false;
+    }
+    sendJson({
+        action: "MESSAGE",
+        message: {
+            id: document.getElementById("channel").value,
+            emoji: crypt.encrypt(document.getElementById("message-box").value),
+            username: document.getElementById("name").value,
+            img: "",
+            tone: userColor
+        }
+    });
+    $(".messages").append("<b style='color: " + userColor + ";'>You: </b><span>" + document.getElementById("message-box").value + "</span><br>");
+    document.getElementById("message-box").value = "";
+};
+
+$(document).keyup(function(event) {
+    if ($(".message-box").is(":focus") && event.key == "Enter") {
+        sendMessage();
+    }
+});
+
+function clean(unsafe) {
+    return unsafe.replace(/[<>&'"]/g, function(c) {
+        switch (c) {
+            case '<':
+                return '&lt;';
+            case '>':
+                return '&gt;';
+            case '&':
+                return '&amp;';
+            case '\'':
+                return '&apos;';
+            case '"':
+                return '&quot;';
+            case ':':
+                return '&#58;';
+            case ';':
+                return '&#59;';
+            case '{':
+                return '&#123;';
+            case '}':
+                return '&#125;';
+            case ',':
+                return '&#44;';
+        }
+    });
+}
