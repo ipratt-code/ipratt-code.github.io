@@ -6,13 +6,23 @@
 	display: flex;
 }
 .hidden {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 0.5s, opacity 0.5s linear;
-  display: none;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s 0.5s, opacity 0.5s linear;
+	display: none;
 }
 .visible {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s 0.5s, opacity 0.5s linear;
+	visibility: visible;
+	opacity: 1;
+	transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+.messages{
+	padding:3px;
+	margin: auto;
+	width: 100%;
+	display: block;
+	border-radius: 14px;
+	height:80vh;
+	overflow-y: scroll;
+	word-wrap: break-word;
 }
