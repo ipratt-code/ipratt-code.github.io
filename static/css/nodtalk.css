@@ -5,18 +5,14 @@
 	padding: 2.1%;
 	display: flex;
 }
-
-::-webkit-scrollbar {
-  width: 20px;
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
+  display: none;
 }
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background: #7289da; 
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #7d8ddd; 
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
