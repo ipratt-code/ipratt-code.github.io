@@ -82,7 +82,7 @@ function connect(name, channel) {
     ws.onmessage = function(event) {
         console.log(event.data);
         var obj = JSON.parse(event.data);
-        var user = clean(obj.message.username);
+        var user = clean(crypt.decrypt(obj.message.username));
         var msg = clean(crypt.decrypt(obj.message.emoji));
         var color = clean(obj.message.tone);
 	if (msg.length > 0) {
