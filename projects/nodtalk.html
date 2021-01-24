@@ -16,9 +16,12 @@
 
 	</script>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LcnITgaAAAAAAZakjtgzr3a3VHN6qI0d0RnB4gg">
+
 	</script>
 	<link rel="stylesheet" href="../static/css/style.css" />
-	<script src="../static/js/nodtalk.js"></script>
+	<link rel="stylesheet" href="../static/css/nodtalk.css">
+	<script src="../static/js/nodtalk.js">
+	</script>
 </head>
 
 <body>
@@ -40,25 +43,26 @@
     </header>
 	<div class="content">
 		<div class="homepage">
-      <h1>NodChat</h1>
-      <div class="center"> 
-         <input type="text" class="channel" id="channel" placeholder="enter a channel" autofocus=""></input>
-      </div>
-      <br>
-      <div class="center">
-         <input type="text" class="name" id="name" placeholder="enter a nickname"></input>
-      </div>
-      <br>
-      <button class="enter-button" onclick="launchApp();">Enter Chatroom</button>
-   </div>
-   <div class="client hidden">
-      <h3 class="channel-indicator">#channel</h3>
-      <h3 class="name-indicator">username</h3>
-      <div class="messages"></div>
-      <div class="center">
-         <input type="text" class="message-box" id="message-box" placeholder="message" autofocus=""></input><button class="enter-button" onclick="sendMessage();">Send</button>
-      </div>
-   </div>
+			<h1>NodTalk</h1>
+			<div class="center"> 
+				<input type="text" class="channel" id="channel" placeholder="enter a channel" autofocus=""></input>
+			</div>
+			<br>
+			<div class="center">
+				<input type="text" class="name" id="name" placeholder="enter a nickname"></input>
+			</div>
+			<br>
+			<button class="enter-button" onclick="launchApp();">Enter Chatroom</button>
+		</div>
+		<div class="client hidden">
+			<h3 class="channel-indicator">#channel</h3>
+			<h3 class="name-indicator">username</h3>
+			<div class="msg-bkrnd">
+				<div class="messages"></div>
+			</div>
+			<div class="center">
+				<input type="text" class="message-box" id="message-box" placeholder="message" autofocus=""></input><button class="enter-button" onclick="sendMessage();">Send</button>
+		</div>
 	</div>
 	<div class="footer">
         <p>This site is licensed under the MIT License. Check it out <a href="https://github.com/ipratt-code/ipratt-code.github.io">here</a>!</p>

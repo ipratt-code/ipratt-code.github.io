@@ -37,8 +37,8 @@ h1 {
 }
 div.content, div.footer{
 	/*background-color:#8491ff;*/
-	width:45%;
-	left:27.5%;
+	width:70%;
+	left:15%;
 	text-align:center;
 	position: relative;
 }
