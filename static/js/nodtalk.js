@@ -8,7 +8,14 @@ var autoScroll = true;
 function toggleAutoScroll() {
   autoScroll = ((document.getElementById('messages').scrollHeight - document.getElementById('messages').scrollTop - document.getElementById('messages').clientHeight) < 1);
 }
-
+function urlify(text) {
+  var urlRegex = /(https?:\/\/[^\s]+)/g;
+  return text.replace(urlRegex, function(url) {
+    return '<a href="' + url + '">' + url + '</a>';
+  })
+  // or alternatively
+  // return text.replace(urlRegex, '<a href="$1">$1</a>')
+}
 //Before the script tag containing this code, you must include this script tag:
 //<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 //for the encryption logic
@@ -88,7 +95,7 @@ function connect(name, channel) {
   ws.onmessage = function(event) {
     var obj = JSON.parse(event.data);
     var user = clean(crypt.decrypt(obj.message.username));
-    var msg = clean(crypt.decrypt(obj.message.emoji));
+    var msg = urlify(clean(crypt.decrypt(obj.message.emoji)));
     var color = clean(obj.message.tone);
     if (msg.length > 0) {
       toggleAutoScroll();
@@ -113,30 +120,31 @@ function connect(name, channel) {
 }
 
 function sendMessage() {
-  var name = document.getElementById("name").value;
-  if (name == false) {
-    name = "Unnamed User";
-  }
-  var channel = document.getElementById("channel").value;
-  if (channel == false) {
-    channel = "main";
-  }
-  if (document.getElementById("message-box").value.length == 0) {
-    return false;
-  }
-  sendJson({
-    action: "MESSAGE",
-    message: {
-      id: channel,
-      emoji: crypt.encrypt(document.getElementById("message-box").value),
-      username: crypt.encrypt(name),
-      img: "",
-      tone: userColor
-    }
-  });
-  $(".messages").append("<b style='color: " + userColor + ";'>" + updateTime() + "You: </b><span>" + document.getElementById("message-box").value + "</span><br>");
-  document.getElementById("message-box").value = "";
-  document.getElementById("messages").scrollBy(0, 10000);
+	var msg = document.getElementById("message-box").value
+	var name = document.getElementById("name").value;
+	if (name == false) {
+	name = "Unnamed User";
+	}
+	var channel = document.getElementById("channel").value;
+	if (channel == false) {
+	channel = "main";
+	}
+	if (document.getElementById("message-box").value.length == 0) {
+	return false;
+	}
+	sendJson({
+	action: "MESSAGE",
+	message: {
+		id: channel,
+		emoji: crypt.encrypt(document.getElementById("message-box").value),
+		username: crypt.encrypt(name),
+		img: "",
+		tone: userColor
+	}
+	});
+	$(".messages").append("<b style='color: " + userColor + ";'>" + updateTime() + "You: </b><span>" + urlify(msg) + "</span><br>");
+	document.getElementById("message-box").value = "";
+	document.getElementById("messages").scrollBy(0, 10000);
 };
 
 $(document).keyup(function(event) {
