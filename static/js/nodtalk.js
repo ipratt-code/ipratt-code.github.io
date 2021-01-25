@@ -1,6 +1,8 @@
 var userColor = "#" + (Math.floor(Math.random() * 2 ** 24).toString(16).padStart(6, "0"));
+
 var sendJson = function() {
   console.log("not started")
+  //will be redefined inside launchApp()
 }
 
 var autoScroll = true;
@@ -60,6 +62,11 @@ function launchApp() {
   $(".homepage").addClass('hidden');
   $(".client").removeClass('hidden');
   $(".client").addClass('visible');
+  $(".name-indicator").css("color", userColor);
+  $(".name-indicator").click(function(){
+    userColor = "#" + (Math.floor(Math.random() * 2 ** 24).toString(16).padStart(6, "0"));
+    $(".name-indicator").css("color", userColor);
+  });
 }
 
 $(document).keyup(function(event) {
