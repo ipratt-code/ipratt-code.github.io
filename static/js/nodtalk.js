@@ -1,4 +1,3 @@
-
 var userColor = "#" + (Math.floor(Math.random() * 2 ** 24).toString(16).padStart(6, "0"));
 var sendJson = function() {
   console.log("not started")
@@ -8,7 +7,6 @@ var autoScroll = true;
 
 function toggleAutoScroll() {
   autoScroll = ((document.getElementById('messages').scrollHeight - document.getElementById('messages').scrollTop - document.getElementById('messages').clientHeight) < 1);
-  console.log(document.getElementById('messages').scrollHeight - document.getElementById('messages').scrollTop - document.getElementById('messages').clientHeight);
 }
 
 //Before the script tag containing this code, you must include this script tag:
@@ -94,7 +92,7 @@ function connect(name, channel) {
     var color = clean(obj.message.tone);
     if (msg.length > 0) {
       toggleAutoScroll();
-      $(".messages").append("<b style='color: " + color + ";'>" + user + ": </b><span>" + msg + "</span><br>");
+      $(".messages").append("<b style='color: " + color + ";'>" + updateTime() + user + ": </b><span>" + msg + "</span><br>");
       if (autoScroll == true) {
         document.getElementById("messages").scrollBy(0, 10000);
       }
@@ -136,7 +134,7 @@ function sendMessage() {
       tone: userColor
     }
   });
-  $(".messages").append("<b style='color: " + userColor + ";'>You: </b><span>" + document.getElementById("message-box").value + "</span><br>");
+  $(".messages").append("<b style='color: " + userColor + ";'>" + updateTime() + "You: </b><span>" + document.getElementById("message-box").value + "</span><br>");
   document.getElementById("message-box").value = "";
   document.getElementById("messages").scrollBy(0, 10000);
 };
@@ -146,6 +144,16 @@ $(document).keyup(function(event) {
     sendMessage();
   }
 });
+
+function updateTime() {
+  var currentTime = new Date();
+  var hours = currentTime.getHours();
+  var minutes = currentTime.getMinutes();
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  return "[" + hours + ":" + minutes + "] ";
+}
 
 function clean(unsafe) {
   return unsafe.replace(/[<>&'"]/g, function(c) {
