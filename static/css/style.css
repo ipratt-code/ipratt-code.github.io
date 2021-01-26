@@ -73,6 +73,7 @@ nav a {
 nav a:hover{
 	background-color: #52aeff;/*rgb(0, 186, 243);*/
 	text-decoration: none;
+	transition:background-color 0.8s;
 }
 header {
 	padding-top: 12px;
