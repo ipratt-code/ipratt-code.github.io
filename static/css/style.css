@@ -79,3 +79,25 @@ header {
 	padding-top: 12px;
 	background-color: #73bcfc;
 }
+.job-info-text{
+	padding-top: 0.5%;
+	border-radius: 10px;
+	background-color: #73bcfc;
+	text-align: left;
+}
+.job-vis-reveal {
+	display: none;
+}
+.morejobinfo-notifier{
+	padding-top:0.5%;
+}
+.morejobinfo-notifier p{
+	padding-bottom:0.5%;
+}
+.morejobinfo-notifier:hover .job-vis-reveal{
+	display: block;
+	padding-bottom: 0.5%;
+}
+.morejobinfo-notifier:hover p{
+	padding-bottom:0%;
+}
