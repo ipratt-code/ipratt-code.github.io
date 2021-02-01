@@ -8,7 +8,7 @@ body {
 iframe{
 	border-style: none;
 }
-
+/*All of the link css applies to all links (DRY principle), b/c then it stands out more against the background*/
 a:link{
 	color: #009933;
 }
@@ -30,6 +30,8 @@ img.logo{
 
 table {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1, span.infohighlight {
@@ -52,10 +54,6 @@ header{
 	margin: 5px;
 	font-size: 15px;
 	text-align:center;
-}
-table{
-	margin-left: auto;
-	margin-right: auto;
 }
 th {
 	text-align: center;
