@@ -32,7 +32,7 @@ table {
     text-align: center;
 }
 
-h1 {
+h1, span.infohighlight {
     color:darkblue;
 }
 div.content, div.footer{

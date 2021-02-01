@@ -1,9 +1,10 @@
 #imgtable {
-	width:50%;
+	width:auto;
 }
 
 img {
     width:10%;
+	transition: 2s;
 }
 
 table#imgtable img {
@@ -50,4 +51,8 @@ img.brightness-filter {
 
 img.contrast-filter {
     filter: contrast(200%);
+}
+
+img:hover {
+	width: 15%
 }
