@@ -12,6 +12,7 @@ iframe{
 /*All of the link css applies to all links (DRY principle), b/c then it stands out more against the background*/
 a{
 	color: #00B8FF;
+	text-decoration: none;
 }
 img.pfp {
 	width: 80px;
