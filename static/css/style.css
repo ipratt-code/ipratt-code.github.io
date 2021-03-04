@@ -56,6 +56,13 @@ div>code{
 nav {
 	padding-top: 12px;
 	border: none !important;
+	background-color: #213f52;
+}
+.navbar-brand {
+	color:#73bcfc !important;
+}
+.navbar-toggler-icon svg {
+	fill:#73bcfc;
 }
 nav a:hover {
 	text-decoration: underline !important;
