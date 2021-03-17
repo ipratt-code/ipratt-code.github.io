@@ -3,7 +3,6 @@
 
 body {
 	font-family: 'Comfortaa', cursive;
-	background: #bad8eb;
 	color: black !important;
 }
 iframe{
@@ -42,7 +41,10 @@ footer{
 	font-size:9px
 }
 .content{
+	border-radius: 5px;
+	background-color: #bad8eb;
 	padding-top: 2%;
+	/*height: 90vh;*/
 }
 th {
 	text-align: center;
@@ -50,41 +52,14 @@ th {
 div>code{
 	text-align:left;
 }
-.navbar-brand, .navbar-text {
-	color: black !important;
+.navbar-brand,.nav-link{
+    color: #bad8eb !important;
 }
 nav {
 	padding-top: 12px;
 	border: none !important;
-	background-color: #213f52;
-}
-.navbar-brand {
-	color:#73bcfc !important;
-}
-.navbar-toggler-icon svg {
-	fill:#73bcfc;
+
 }
 nav a:hover {
 	text-decoration: underline !important;
-}
-.job-info-text{
-	padding-top: 0.5%;
-	border-radius: 10px;
-	border-color: #73bcfc;
-}
-.job-vis-reveal {
-	display: none;
-}
-.morejobinfo-notifier{
-	padding-top:0.5%;
-}
-.morejobinfo-notifier p{
-	padding-bottom:0.5%;
-}
-.morejobinfo-notifier:hover .job-vis-reveal{
-	display: block;
-	padding-bottom: 0.5%;
-}
-.morejobinfo-notifier:hover p{
-	padding-bottom:0%;
 }
