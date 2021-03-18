@@ -1,1 +1,5 @@
+plugins:
+  - jekyll-sitemap
+  - jekyll-last-modified-at
+
 permalink: /:title
