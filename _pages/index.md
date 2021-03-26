@@ -5,7 +5,7 @@ permalink: /
 ---
 <html>
     <h1>Welcome!</h1>
-    <img src="static/img/mugshot_square.jpg" class="rounded mx-auto d-block pfp">
+    <img src="assets/img/mugshot_square.jpg" class="rounded mx-auto d-block pfp">
     <p>This is my website! This website is hosted using <a href="https://pages.github.com/">Github Pages</a>. I
         am
         pretty proud of myself for setting up this website. This website is a <span

@@ -11,12 +11,6 @@ plugins:
 sass:
   sass_dir: _sass
 
-collections:
-    products:
-      output: true
-      # layout: product
-      permalink: /shop/:title/
-
 
 defaults:
   -
@@ -34,8 +28,3 @@ defaults:
     values:
       is_post: false
       permalink: /:title/
-  -
-    scope:
-      path: ""
-    values:
-      layout: product
