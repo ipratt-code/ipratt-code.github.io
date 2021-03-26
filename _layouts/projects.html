@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include headcontent.html %}
+</head>
+
+<body class="bg-dark">
+    {% include nav.html %}
+    <div class="content container">
+        <div class="mx-auto col-12">
+            {{ page.content | markdownify }}
+            <ul>
+                {% for project in site.projects %}
+                <li><a href="{{ project.url }}">{{ project.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

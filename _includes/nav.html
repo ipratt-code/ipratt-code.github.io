@@ -28,13 +28,15 @@
                         Projects
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/projects">All Projects</a></li>
+                        {% for project in site.projects limit:1 %}
+                        <li><a class="dropdown-item" href="{{ project.url }}">{{ project.title }}</a>
+                        </li>
+                        {% endfor %}
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="/projects/ltscifair2020">Lane Tech Science Fair
-                                2020</a>
-                        </li>
+
+                        <li><a class="dropdown-item" href="/projects">All Projects</a></li>
                     </ul>
                 </li>
             </ul>

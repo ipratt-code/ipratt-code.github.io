@@ -1,5 +1,5 @@
 ---
-title: Image Filters
+title: CSS Image Filters
 layout: page
 permalink: /projects/imagefilters
 ---
@@ -10,8 +10,10 @@ permalink: /projects/imagefilters
 </head>
 
 <h1>CSS image filters</h1>
-<p>This is where I will apply css image filters to the same image of me!</p>
-<img src="../assets/img/android-chrome-512x512.png">
+<div class="text-center mx-auto">
+	<p>This is where I will apply css image filters to the same image of me!</p>
+	<img src="../assets/img/android-chrome-512x512.png">
+</div>
 <table id="imgtable">
 	<tbody>
 		<tr>
