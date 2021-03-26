@@ -1,3 +1,4 @@
 .replit
 _site
 .jekyll-cache
+Gemfile*
