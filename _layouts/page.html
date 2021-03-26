@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Hopefully repl.it will not freak out-->
+
+<head>
+    {% include headcontent.html %}
+</head>
+
+<body class="bg-dark">
+    {% include nav.html %}
+    <div class="content container">
+        <div class="mx-auto col-12">
+            {{ page.content | markdownify}}
+        </div>
+    </div>
+
+</body>
+
+</html>

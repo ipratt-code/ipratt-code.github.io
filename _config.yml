@@ -1,5 +1,41 @@
-plugins:
-  - jekyll-sitemap
-  - jekyll-last-modified-at
+title: Mindfullness with Meka
 
-permalink: /:title
+include: [_pages, _products]
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+sass:
+  sass_dir: _sass
+
+collections:
+    products:
+      output: true
+      # layout: product
+      permalink: /shop/:title/
+
+
+defaults:
+  -
+    scope:
+      type: posts
+      path: _posts
+    values:
+      is_post: true
+      layout: post
+      permalink: /blog/:year/:month/:day/:title/
+  -
+    scope:
+      type: pages
+      path: _pages
+    values:
+      is_post: false
+      permalink: /:title/
+  -
+    scope:
+      path: ""
+    values:
+      layout: product
