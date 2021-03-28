@@ -10,6 +10,11 @@
     <div class="content container">
         <div class="mx-auto col-12">
             {{ page.content | markdownify }}
+            <ul>
+                {% for post in site.posts %}
+                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 
