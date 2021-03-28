@@ -14,7 +14,7 @@ permalink: /
     <div class="text-center">
         <h3>Is it my birthday?</h3>
         <p id="isbday">It's not my birthday yet :(</p>
-    </div class="text-center">
+    </div>
     <script>
         var d = new Date()
         var isBday = document.getElementById("isbday");
