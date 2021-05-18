@@ -1,6 +1,6 @@
-title: Mindfullness with Meka
+title: A simple programmer
 
-include: [_pages, _products]
+include: [_pages]
 
 
 plugins:
@@ -10,12 +10,6 @@ plugins:
 
 sass:
   sass_dir: _sass
-
-collections:
-    projects:
-      output: true
-      # layout: product
-      permalink: /projects/:title/
 
 defaults:
   -
@@ -33,8 +27,3 @@ defaults:
     values:
       is_post: false
       permalink: /:title/
-  -
-    scope:
-      path: ""
-    values:
-      layout: page
