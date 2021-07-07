@@ -1,8 +1,19 @@
 nav {
 	padding-top: 12px;
 	border: none !important;
-	//background: $gradient-top-right;
 }
+.navbar{
+	opacity: 1.00;
+	-webkit-transition: 0.25s all ease-in-out;
+	-moz-transition: 0.25s all ease-in-out;
+	-o-transition: 0.25s all ease-in-out;
+	transition: 0.25s all ease-in-out;
+}
+/*
+.navbar:hover {
+	opacity: 0.00;
+}
+*/
 nav a:hover {
 	text-decoration: underline !important;
 }
