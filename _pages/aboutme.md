@@ -14,7 +14,7 @@ I like these things quite a lot:
 - Cheesecake
 - Programs compiling successfully
 - Chess
-- Linux (of any flavors and kinds, I am currently running Pop!\_OS)
+- Linux (of any flavors and kinds, I am currently running Debian Sid)
 - Two-Factor Authentication
 
 I would prefer to follow a profession in the Computer Science industry, probably as someone working with machine learning and artificial inteligence
