@@ -1,7 +1,8 @@
----
----
 /*Currently, the CSS is being redesigned with Bootstrap in mind. This could mess up the website for a while.*/
 @import url(https://fonts.googleapis.com/css2?family=Comfortaa&display=swap);
+
+@import 'colors';
+@import 'nav';
 
 body {
 	font-family: 'Comfortaa', cursive;
@@ -53,15 +54,4 @@ th {
 }
 div>code{
 	text-align:left;
-}
-.navbar-brand,.nav-link{
-    color: #bad8eb !important;
-}
-nav {
-	padding-top: 12px;
-	border: none !important;
-
-}
-nav a:hover {
-	text-decoration: underline !important;
 }
