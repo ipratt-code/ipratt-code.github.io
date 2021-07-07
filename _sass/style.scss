@@ -3,9 +3,13 @@
 
 @import 'colors';
 @import 'nav';
-
+html {
+	min-height: 100%;
+}
 body {
 	font-family: 'Comfortaa', cursive;
+	background: $gradient-top-right;
+
 }
 iframe{
 	border-style: none;
@@ -44,7 +48,7 @@ footer{
 }
 .content{
 	border-radius: 5px;
-	background-color: #bad8eb;
+	background-color: #ffffff;
 	padding-top: 2%;
 	min-height: 90vh;
 }
