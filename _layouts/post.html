@@ -9,6 +9,8 @@
     {% include nav.html %}
     <div class="content container">
         <div class="mx-auto col-12">
+            <h1 class="text-center">{{ page.title }}</h1>
+            <p class="text-center blurb">{{ page.blurb }}</p>
             {{ page.content | markdownify}}
         </div>
     </div>

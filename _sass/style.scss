@@ -3,6 +3,8 @@
 
 @import 'colors';
 @import 'nav';
+@import 'blog';
+
 html {
 	min-height: 100%;
 }
@@ -39,7 +41,7 @@ table {
 }
 
 h1, span.infohighlight {
-    color:#213f52;
+    color: black;
 }
 footer{
 	margin: 5px;
