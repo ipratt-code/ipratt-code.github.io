@@ -31,4 +31,14 @@ And so many more reasons I can't list out here, because I don't know them. Every
 that they joined just out of hating minorities is flawed. And making cops quit to "prove" they aren't bad is just keeping honest people honest.
 That has no guarantee that it'll make the actually bad cops leave. It instead makes the concentration of bigots higher and higher, instead of making
 it lower or lower, or *actually* solving the problem, which is regulating the supplies cops have *in the first place*, which *prevents* the bad cops from
-doing bad things, and *creating laws* to help regulate cop's actions, which punishes the bad cops for doing bad things
+doing bad things, and *creating laws* to help regulate a cops' actions, which punishes the bad cops for doing bad things.
+
+It is sad that I need to explain this for ACAB, but *imagine* what it feels like for All Men Are Bad, discounting all the good that men can and do do,
+or All Cryptocurrencies Are Bad, discounting all the amazing new potential that cryptocurrencies can give us, as well as that not all cryptos
+are made the same way.
+
+The problem with social media nowadays is that people just don't take the time to express what they mean. And that can hinder us from saying what we mean,
+and expressing the full range of ideas and solutions to our current problems.
+
+Don't be general. Be *specific*, be *precise*, be *meaningfull*. Don't just repeat "All __ Are Bad", be critical about what that actually means, do some
+research, and decide for yourself if you stand for what that says.
